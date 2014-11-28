@@ -1,0 +1,17 @@
+@supports(-moz-font-feature-settings:"smcp=1")
+	or (-moz-font-feature-settings:"smcp")
+	or (-ms-font-feature-settings:"smcp")
+	or (-o-font-feature-settings:"smcp")
+	or (-webkit-font-feature-settings: "smcp")
+	or (font-feature-settings:"smcp")
+{ 
+    .sc {
+		-moz-font-feature-settings:"smcp=1";
+		-moz-font-feature-settings:"smcp";
+		-ms-font-feature-settings:"smcp";
+		-o-font-feature-settings:"smcp";
+		-webkit-font-feature-settings: "smcp";
+		font-feature-settings:"smcp";
+		text-transform: lowercase;
+	}
+}
