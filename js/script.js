@@ -4,6 +4,15 @@ $(document).ready(function() {
 	var allTabs = $('#menu li');
 	var container = $('#container');
 
+	// Sets the container height based on the current col
+	var setHeight = function(){
+		var currentCol = $('.current-col');
+		var newHeight = currentCol.height();
+		container.css('height', newHeight);
+	};
+
+	setHeight();
+
 	tabLink.click(function(e) {
 		
 		// Set the data value as a variable
@@ -23,9 +32,8 @@ $(document).ready(function() {
 		// Change page height based on current-col class
 		$('.col').removeClass('current-col');
 		$('.col-' + column).addClass('current-col');
-		var currentCol = $('.current-col');
-		var newHeight = currentCol.height();
-		container.css('height', newHeight);
+		
+		setHeight();
 
 		// Keep the link from activating
 		e.preventDefault();
@@ -36,48 +44,63 @@ $(document).ready(function() {
 		$('#menu li:nth-of-type(' + column + ')').addClass('active');
 	});
 
+	// Swipe recognition with touchSwipe.js
+	container.swipe( { swipeLeft:swipe1, swipeRight:swipe2, allowPageScroll:"vertical" });
 
-	// Swipe left 
-	container.swipe({
-		swipe:function(swipe, direction, distance, duration, fingerCount) {
+	// Function for swiping left
+	function swipe1(swipe, direction, distance, duration, fingerCount) {
 
-			var currentLeft = parseInt(container[0].style.left);
-			var currentTab = $('li.active');
+		var currentLeft = parseInt(container[0].style.left);
+		var currentTab = $('li.active');
 
-			if (direction == 'left' && currentLeft < 400) {
+		if (currentLeft < 400) {
 
-				// Up it by 100
-				var newLeft = currentLeft - 100;
+			// Up it by 100
+			var newLeft = currentLeft - 100;
 
-				// Apply it
-				container.css('left', newLeft + '%');
+			// Apply it
+			container.css('left', newLeft + '%');
 
-				// Change the tabs
-				currentTab.next('li').addClass('active');
-				currentTab.removeClass('active');
+			// Change the tabs
+			currentTab.next('li').addClass('active');
+			currentTab.removeClass('active');
 
-			} else if (direction == 'right' && currentLeft < 0) {
+			colAddClass();
 
-				// Up it by 100
-				var newLeft = currentLeft + 100;
+			setHeight();	
+		}	
+	};
 
-				// Apply it
-				container.css('left', newLeft + '%');
+	// Function for swiping right
+	function swipe2(swipe, direction, distance, duration, fingerCount) {
 
-				// Change the tabs
-				currentTab.prev('li').addClass('active');
-				currentTab.removeClass('active');
-			}
+		var currentLeft = parseInt(container[0].style.left);
+		var currentTab = $('li.active');
 
-			var column = $('#menu li.active a').data('col');
-			// Change page height based on current-col class
-			$('.col').removeClass('current-col');
-			$('.col-' + column).addClass('current-col');
-			var currentCol = $('.current-col');
-			var newHeight = currentCol.height();
-			container.css('height', newHeight);
+		if (currentLeft < 0) {
+			// Up it by 100
+			var newLeft = currentLeft + 100;
+
+			// Apply it
+			container.css('left', newLeft + '%');
+
+			// Change the tabs
+			currentTab.prev('li').addClass('active');
+			currentTab.removeClass('active');
+
+			colAddClass();
+
+			setHeight();
 		}
-	});
+	};
+
+	// Identifies which col should have .col-current class based on active tab
+	var colAddClass = function() {
+		var column = $('#menu li.active a').data('col');
+		// Change page height based on current-col class
+		$('.col').removeClass('current-col');
+		$('.col-' + column).addClass('current-col');
+	};
 
 });
 
