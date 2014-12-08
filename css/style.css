@@ -234,7 +234,7 @@ em {
 }
 #main-header .tagline {
   width: 100%;
-  max-width: 320px;
+  max-width: 360px;
   margin: auto;
   padding-top: 100px;
 }
@@ -245,7 +245,7 @@ em {
 }
 #main-header h2 {
   color: #3f4b5b;
-  font-size: 20px;
+  font-size: 24px;
 }
 @media all and (max-width: 500px) {
   #main-header {
@@ -373,6 +373,9 @@ em {
     width: 100%;
     padding: 0;
     margin-top: 18px;
+  }
+  .work .text em {
+    font-size: 14px;
   }
 }
 .resume {
