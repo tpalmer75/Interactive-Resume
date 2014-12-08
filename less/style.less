@@ -2,6 +2,17 @@
 @import "variables.less";
 @import "supports.less";
 
+@googleBlue: #4285f4;
+.google {
+	#menu li.active {
+		color: @googleBlue;
+		.box-shadow(0 -2px 5px fade(darken(@googleBlue, 25%), 25%));
+	}
+	#main-header {
+		background: @googleBlue;
+	}
+}
+
 
 html, body {
 	width: 100%;
@@ -11,7 +22,7 @@ html, body {
 body {
 	font-family: @serif;
 	line-height: 1.6;
-	font-size: 18px;
+	font-size: 21px;
 	color: #323232;
 	@media all and (max-width: 500px) {
 		font-size: 16px;
@@ -40,9 +51,12 @@ h3 {
 	color: @blue;
 	font-family: @sans;
 	text-transform: uppercase;
-	font-size: 15px;
+	font-size: 18px;
 	font-weight: bold;
 	letter-spacing: 1px;
+	@media all and (max-width: 500px) {
+		font-size: 15px;
+	}
 }
 
 em {
@@ -97,8 +111,12 @@ em {
 		text-align: center;
 		margin: 0 12px;
 		padding: 5px 0 10px;
+		font-size: 18px;
 		.border-radius(5px);
 		.transition(all .2s);
+		@media all and (max-width: 500px) {
+			font-size: 16px;
+		}
 		&.active {
 			background: #fff;
 			color: @blue;
@@ -162,6 +180,7 @@ em {
 		}
 		em {
 			color: #999;
+			font-size: 18px;
 		}
 		@media all and (max-width: 425px) {
 			width: 100%;
@@ -219,17 +238,22 @@ em {
 	display: inline-block;
 	margin-bottom: 24px;
 	.icon-container {
-		width: 63px;
-		height: 63px;
+		width: 64px;
+		height: 64px;
 		border-radius: 9999px;
 		margin: 0 auto 24px;
 		color: #fff;
 		background: @blue;
+		display: inline-block;
 		.fa {
-			line-height: 63px;
+			line-height: 64px;
 		}
-	}
-	@media all and (max-width: 500px) {
-		width: 50%;
+		@media all and (max-width: 500px) {
+			width: 44px;
+			height: 44px;
+			.fa {
+				line-height: 44px;
+			}
+		}	
 	}
 }

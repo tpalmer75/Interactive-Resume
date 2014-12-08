@@ -45,7 +45,7 @@ $(document).ready(function() {
 	});
 
 	// Swipe recognition with touchSwipe.js
-	container.swipe( { swipeLeft:swipe1, swipeRight:swipe2, allowPageScroll:"vertical" });
+	$(window).swipe( { swipeLeft:swipe1, swipeRight:swipe2, allowPageScroll:"vertical" });
 
 	// Function for swiping left
 	function swipe1(swipe, direction, distance, duration, fingerCount) {
@@ -53,7 +53,7 @@ $(document).ready(function() {
 		var currentLeft = parseInt(container[0].style.left);
 		var currentTab = $('li.active');
 
-		if (currentLeft < 400) {
+		if (currentLeft > -300) {
 
 			// Up it by 100
 			var newLeft = currentLeft - 100;
@@ -101,6 +101,10 @@ $(document).ready(function() {
 		$('.col').removeClass('current-col');
 		$('.col-' + column).addClass('current-col');
 	};
+
+	$(window).resize(function() {
+		setHeight();
+	});
 
 });
 

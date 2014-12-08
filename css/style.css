@@ -166,6 +166,15 @@ table {
     text-transform: lowercase;
   }
 }
+.google #menu li.active {
+  color: #4285f4;
+  -webkit-box-shadow: 0 -2px 5px rgba(10, 71, 172, 0.25);
+  -moz-box-shadow: 0 -2px 5px rgba(10, 71, 172, 0.25);
+  box-shadow: 0 -2px 5px rgba(10, 71, 172, 0.25);
+}
+.google #main-header {
+  background: #4285f4;
+}
 html,
 body {
   width: 100%;
@@ -174,7 +183,7 @@ body {
 body {
   font-family: 'chaparral-pro', serif;
   line-height: 1.6;
-  font-size: 18px;
+  font-size: 21px;
   color: #323232;
 }
 @media all and (max-width: 500px) {
@@ -204,9 +213,14 @@ h3 {
   color: #7c8ca4;
   font-family: 'museo-sans-rounded', sans-serif;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: bold;
   letter-spacing: 1px;
+}
+@media all and (max-width: 500px) {
+  h3 {
+    font-size: 15px;
+  }
 }
 em {
   font-style: italic;
@@ -261,6 +275,7 @@ em {
   text-align: center;
   margin: 0 12px;
   padding: 5px 0 10px;
+  font-size: 18px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -271,6 +286,11 @@ em {
   -moz-transition: all 0.2s;
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
+}
+@media all and (max-width: 500px) {
+  #menu li {
+    font-size: 16px;
+  }
 }
 #menu li.active {
   background: #fff;
@@ -346,6 +366,7 @@ em {
 }
 .work .text em {
   color: #999;
+  font-size: 18px;
 }
 @media all and (max-width: 425px) {
   .work .text {
@@ -403,18 +424,23 @@ em {
   margin-bottom: 24px;
 }
 .contact .icon-container {
-  width: 63px;
-  height: 63px;
+  width: 64px;
+  height: 64px;
   border-radius: 9999px;
   margin: 0 auto 24px;
   color: #fff;
   background: #7c8ca4;
+  display: inline-block;
 }
 .contact .icon-container .fa {
-  line-height: 63px;
+  line-height: 64px;
 }
 @media all and (max-width: 500px) {
-  .contact {
-    width: 50%;
+  .contact .icon-container {
+    width: 44px;
+    height: 44px;
+  }
+  .contact .icon-container .fa {
+    line-height: 44px;
   }
 }
