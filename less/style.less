@@ -24,8 +24,8 @@ body {
 	line-height: 1.6;
 	font-size: 21px;
 	color: #323232;
-	@media all and (max-width: 500px) {
-		font-size: 16px;
+	@media all and (max-width: 600px) {
+		font-size: 18px;
 	}
 }
 
@@ -37,7 +37,7 @@ p {
 	-o-font-feature-settings:"onum";
 	-webkit-font-feature-settings:"onum";
 	font-feature-settings:"onum";
-	@media all and (max-width: 500px) {
+	@media all and (max-width: 600px) {
 		margin: 12px 0;
 	}
 }
@@ -54,7 +54,7 @@ h3 {
 	font-size: 18px;
 	font-weight: bold;
 	letter-spacing: 1px;
-	@media all and (max-width: 500px) {
+	@media all and (max-width: 600px) {
 		font-size: 15px;
 	}
 }
@@ -65,13 +65,12 @@ em {
 
 #main-header {
 	font-family: @sans;
-	background: @blue;
+	background: @dark-blue;
 	height: 350px;
 	position: relative;
 	overflow: hidden;
 	.tagline {
-		width: 100%;
-		max-width: 360px;
+		max-width: 496px;
 		margin: auto;
 		padding-top: 100px;
 	}
@@ -81,20 +80,20 @@ em {
 		margin-bottom: 8px;
 	}
 	h2 {
-		color: @dark-blue;
+		color: @blue;
 		font-size: 24px;
 	}
-	@media all and (max-width: 500px) {
+	@media all and (max-width: 600px) {
 		height: 264px;
 		h1 {
 			font-size: 24px;
 		}
 		h2 {
-			font-size: 18px;
+			font-size: 20px;
 		}
 		.tagline {
 			max-width: 300px;
-			padding: 48px 20px 0;
+			padding: 48px 0 0;
 		}
 	}
 }
@@ -107,24 +106,33 @@ em {
 	li {
 		display: inline-block;
 		color: #fff;
-		width: 82px;
+		width: 100px;
 		text-align: center;
 		margin: 0 12px;
 		padding: 5px 0 10px;
 		font-size: 18px;
 		.border-radius(5px);
 		.transition(all .2s);
-		@media all and (max-width: 500px) {
+		@media all and (max-width: 600px) {
 			font-size: 16px;
 		}
 		&.active {
 			background: #fff;
-			color: @blue;
+			color: @dark-blue;
 			.box-shadow(0 -2px 5px fade(@dark-blue, 25%));
 		}
-		@media all and (max-width: 500px) {
+		@media all and (max-width: 600px) {
+			margin: 0;
+			width: 84px;
+			font-size: 16px;
+		}
+		@media all and (max-width: 370px) {
 			margin: 0;
 			width: 72px;
+			font-size: 14px;
+		}
+		@media all and (max-width: 300px) {
+			width: 60px;
 		}
 	}
 }
@@ -134,7 +142,7 @@ em {
 	position: relative;
 	left: 0;
 	overflow: hidden;
-	.transition(left .2s);
+	.transition(all .2s);
 	.col {
 		width: 25%;
 		display: inline-block;
@@ -145,8 +153,9 @@ em {
 			@media all and (max-width: 660px) {
 				padding: 0 10px;
 			}
-			@media all and (max-width: 500px) {
-				margin: 24px 0;
+			@media all and (max-width: 600px) {
+				margin: 24px auto;
+				max-width: 500px;
 			}
 		}
 	}
@@ -162,9 +171,17 @@ em {
 		width: 33%;
 		height: 0;
 		padding-bottom: 33%;
+		position: relative;
 		background: #ddd;
 		background-size: cover;
 		background-position: center center;
+		.fa {
+			color: rgba(255,255,255,.5);
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			font-size: 30px;
+		}
 		@media all and (max-width: 425px) {
 			width: 100%;
 			padding-bottom: 66%;
@@ -206,7 +223,7 @@ em {
 		font-weight: bold;
 		letter-spacing: 1px;
 		margin-top: 3px;
-		@media all and (max-width: 500px) {
+		@media all and (max-width: 600px) {
 			font-size: 12px;
 			letter-spacing: .5px;
 			margin-bottom: 12px;
@@ -251,12 +268,19 @@ em {
 		.fa {
 			line-height: 64px;
 		}
-		@media all and (max-width: 500px) {
+		@media all and (max-width: 600px) {
 			width: 44px;
 			height: 44px;
 			.fa {
 				line-height: 44px;
 			}
 		}	
+	}
+}
+
+.contact-container {
+	margin-top: 48px;
+	@media all and (max-width: 600px) {
+		margin-top: 24px;
 	}
 }

@@ -181,14 +181,14 @@ body {
   overflow-x: hidden;
 }
 body {
-  font-family: 'chaparral-pro', serif;
+  font-family: 'chaparral-pro', 'Georgia', serif;
   line-height: 1.6;
   font-size: 21px;
   color: #323232;
 }
-@media all and (max-width: 500px) {
+@media all and (max-width: 600px) {
   body {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 p {
@@ -200,7 +200,7 @@ p {
   -webkit-font-feature-settings: "onum";
   font-feature-settings: "onum";
 }
-@media all and (max-width: 500px) {
+@media all and (max-width: 600px) {
   p {
     margin: 12px 0;
   }
@@ -210,14 +210,14 @@ a {
   color: inherit;
 }
 h3 {
-  color: #7c8ca4;
-  font-family: 'museo-sans-rounded', sans-serif;
+  color: #6dbcdb;
+  font-family: 'museo-sans-rounded', 'Lucida Sans', sans-serif;
   text-transform: uppercase;
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 1px;
 }
-@media all and (max-width: 500px) {
+@media all and (max-width: 600px) {
   h3 {
     font-size: 15px;
   }
@@ -226,15 +226,14 @@ em {
   font-style: italic;
 }
 #main-header {
-  font-family: 'museo-sans-rounded', sans-serif;
-  background: #7c8ca4;
+  font-family: 'museo-sans-rounded', 'Lucida Sans', sans-serif;
+  background: #2c3e50;
   height: 350px;
   position: relative;
   overflow: hidden;
 }
 #main-header .tagline {
-  width: 100%;
-  max-width: 360px;
+  max-width: 496px;
   margin: auto;
   padding-top: 100px;
 }
@@ -244,10 +243,10 @@ em {
   margin-bottom: 8px;
 }
 #main-header h2 {
-  color: #3f4b5b;
+  color: #6dbcdb;
   font-size: 24px;
 }
-@media all and (max-width: 500px) {
+@media all and (max-width: 600px) {
   #main-header {
     height: 264px;
   }
@@ -255,11 +254,11 @@ em {
     font-size: 24px;
   }
   #main-header h2 {
-    font-size: 18px;
+    font-size: 20px;
   }
   #main-header .tagline {
     max-width: 300px;
-    padding: 48px 20px 0;
+    padding: 48px 0 0;
   }
 }
 #menu {
@@ -271,7 +270,7 @@ em {
 #menu li {
   display: inline-block;
   color: #fff;
-  width: 82px;
+  width: 100px;
   text-align: center;
   margin: 0 12px;
   padding: 5px 0 10px;
@@ -287,22 +286,35 @@ em {
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
 }
-@media all and (max-width: 500px) {
+@media all and (max-width: 600px) {
   #menu li {
     font-size: 16px;
   }
 }
 #menu li.active {
   background: #fff;
-  color: #7c8ca4;
-  -webkit-box-shadow: 0 -2px 5px rgba(63, 75, 91, 0.25);
-  -moz-box-shadow: 0 -2px 5px rgba(63, 75, 91, 0.25);
-  box-shadow: 0 -2px 5px rgba(63, 75, 91, 0.25);
+  color: #2c3e50;
+  -webkit-box-shadow: 0 -2px 5px rgba(44, 62, 80, 0.25);
+  -moz-box-shadow: 0 -2px 5px rgba(44, 62, 80, 0.25);
+  box-shadow: 0 -2px 5px rgba(44, 62, 80, 0.25);
 }
-@media all and (max-width: 500px) {
+@media all and (max-width: 600px) {
+  #menu li {
+    margin: 0;
+    width: 84px;
+    font-size: 16px;
+  }
+}
+@media all and (max-width: 370px) {
   #menu li {
     margin: 0;
     width: 72px;
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 300px) {
+  #menu li {
+    width: 60px;
   }
 }
 #container {
@@ -310,10 +322,10 @@ em {
   position: relative;
   left: 0;
   overflow: hidden;
-  -webkit-transition: left 0.2s;
-  -moz-transition: left 0.2s;
-  -ms-transition: left 0.2s;
-  -o-transition: left 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
 }
 #container .col {
   width: 25%;
@@ -329,13 +341,14 @@ em {
     padding: 0 10px;
   }
 }
-@media all and (max-width: 500px) {
+@media all and (max-width: 600px) {
   #container .col .content {
-    margin: 24px 0;
+    margin: 24px auto;
+    max-width: 500px;
   }
 }
 #container p a {
-  border-bottom: 4px solid rgba(124, 140, 164, 0.5);
+  border-bottom: 4px solid rgba(109, 188, 219, 0.5);
 }
 .work {
   margin-bottom: 16px;
@@ -345,9 +358,17 @@ em {
   width: 33%;
   height: 0;
   padding-bottom: 33%;
+  position: relative;
   background: #ddd;
   background-size: cover;
   background-position: center center;
+}
+.work .image-container .fa {
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 30px;
 }
 @media all and (max-width: 425px) {
   .work .image-container {
@@ -366,7 +387,7 @@ em {
 }
 .work .text em {
   color: #999;
-  font-size: 18px;
+  font-size: 85%;
 }
 @media all and (max-width: 425px) {
   .work .text {
@@ -385,15 +406,15 @@ em {
   margin-bottom: 24px;
 }
 .resume .time {
-  font-family: 'museo-sans-rounded', sans-serif;
+  font-family: 'museo-sans-rounded', 'Lucida Sans', sans-serif;
   color: #999;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 75%;
   font-weight: bold;
   letter-spacing: 1px;
   margin-top: 3px;
 }
-@media all and (max-width: 500px) {
+@media all and (max-width: 600px) {
   .resume .time {
     font-size: 12px;
     letter-spacing: .5px;
@@ -432,18 +453,26 @@ em {
   border-radius: 9999px;
   margin: 0 auto 24px;
   color: #fff;
-  background: #7c8ca4;
+  background: #6dbcdb;
   display: inline-block;
 }
 .contact .icon-container .fa {
   line-height: 64px;
 }
-@media all and (max-width: 500px) {
+@media all and (max-width: 600px) {
   .contact .icon-container {
     width: 44px;
     height: 44px;
   }
   .contact .icon-container .fa {
     line-height: 44px;
+  }
+}
+.contact-container {
+  margin-top: 48px;
+}
+@media all and (max-width: 600px) {
+  .contact-container {
+    margin-top: 24px;
   }
 }

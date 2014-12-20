@@ -12,6 +12,8 @@ $(document).ready(function() {
 	};
 
 	setHeight();
+	// Trigger resize to adjust the height
+	$(window).trigger($.Event('resize'));
 
 	tabLink.click(function(e) {
 		
@@ -42,6 +44,8 @@ $(document).ready(function() {
 	$('.indirect').click(function() {
 		var column = $(this).data('col');
 		$('#menu li:nth-of-type(' + column + ')').addClass('active');
+
+		setHeight();
 	});
 
 	// Swipe recognition with touchSwipe.js
