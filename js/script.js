@@ -1,5 +1,59 @@
 $(document).ready(function() {
 
+	 var is_touch_device = 'ontouchstart' in document.documentElement;
+
+    if (is_touch_device) {
+    	// Swipe recognition with touchSwipe.js
+		$(window).swipe( { swipeLeft:swipe1, swipeRight:swipe2, allowPageScroll:"vertical" });
+
+		// Function for swiping left
+		function swipe1(swipe, direction, distance, duration, fingerCount) {
+
+			var currentLeft = parseInt(container[0].style.left);
+			var currentTab = $('li.active');
+
+			if (currentLeft > -300) {
+
+				// Up it by 100
+				var newLeft = currentLeft - 100;
+
+				// Apply it
+				container.css('left', newLeft + '%');
+
+				// Change the tabs
+				currentTab.next('li').addClass('active');
+				currentTab.removeClass('active');
+
+				colAddClass();
+
+				setHeight();	
+			}	
+		};
+
+		// Function for swiping right
+		function swipe2(swipe, direction, distance, duration, fingerCount) {
+
+			var currentLeft = parseInt(container[0].style.left);
+			var currentTab = $('li.active');
+
+			if (currentLeft < 0) {
+				// Up it by 100
+				var newLeft = currentLeft + 100;
+
+				// Apply it
+				container.css('left', newLeft + '%');
+
+				// Change the tabs
+				currentTab.prev('li').addClass('active');
+				currentTab.removeClass('active');
+
+				colAddClass();
+
+				setHeight();
+			}
+		};
+    }
+
 	var tabLink = $('#menu li a, .indirect');
 	var allTabs = $('#menu li');
 	var container = $('#container');
@@ -47,56 +101,6 @@ $(document).ready(function() {
 
 		setHeight();
 	});
-
-	// Swipe recognition with touchSwipe.js
-	$(window).swipe( { swipeLeft:swipe1, swipeRight:swipe2, allowPageScroll:"vertical" });
-
-	// Function for swiping left
-	function swipe1(swipe, direction, distance, duration, fingerCount) {
-
-		var currentLeft = parseInt(container[0].style.left);
-		var currentTab = $('li.active');
-
-		if (currentLeft > -300) {
-
-			// Up it by 100
-			var newLeft = currentLeft - 100;
-
-			// Apply it
-			container.css('left', newLeft + '%');
-
-			// Change the tabs
-			currentTab.next('li').addClass('active');
-			currentTab.removeClass('active');
-
-			colAddClass();
-
-			setHeight();	
-		}	
-	};
-
-	// Function for swiping right
-	function swipe2(swipe, direction, distance, duration, fingerCount) {
-
-		var currentLeft = parseInt(container[0].style.left);
-		var currentTab = $('li.active');
-
-		if (currentLeft < 0) {
-			// Up it by 100
-			var newLeft = currentLeft + 100;
-
-			// Apply it
-			container.css('left', newLeft + '%');
-
-			// Change the tabs
-			currentTab.prev('li').addClass('active');
-			currentTab.removeClass('active');
-
-			colAddClass();
-
-			setHeight();
-		}
-	};
 
 	// Identifies which col should have .col-current class based on active tab
 	var colAddClass = function() {
