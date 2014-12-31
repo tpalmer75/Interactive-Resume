@@ -65,9 +65,10 @@ $(document).ready(function() {
 		container.css('height', newHeight);
 	};
 
-	setHeight();
-	// Trigger resize to adjust the height
-	$(window).trigger($.Event('resize'));
+	// Wait 2 seconds for fonts to load, then modify the container height
+	setTimeout(
+		setHeight()
+	, 2000);
 
 	tabLink.click(function(e) {
 		

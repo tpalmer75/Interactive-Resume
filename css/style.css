@@ -227,7 +227,9 @@ em {
 }
 #main-header {
   font-family: 'museo-sans-rounded', 'Lucida Sans', sans-serif;
-  background: #2c3e50;
+  background-image: url('../img/books.jpg');
+  background-size: cover;
+  background-position: center center;
   height: 350px;
   position: relative;
   overflow: hidden;
@@ -236,6 +238,7 @@ em {
   max-width: 496px;
   margin: auto;
   padding-top: 100px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 #main-header h1 {
   color: #fff;
